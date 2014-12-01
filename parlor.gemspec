@@ -6,11 +6,10 @@ require 'parlor/version'
 Gem::Specification.new do |spec|
   spec.name          = "parlor"
   spec.version       = Parlor::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.authors       = ["Will Mitchell"]
+  spec.email         = ["wvmitchell@gmail.com"]
+  spec.summary       = %q{A gem for adding games to your webpage}
+  spec.homepage      = "https://github.com/wvmitchell/parlor"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
