@@ -1,6 +1,5 @@
 require "parlor/version"
-require "parlor/hangman/game"
-require "csv"
+require "parlor/hangman/hangman"
 
 module Parlor
   # Your code goes here...

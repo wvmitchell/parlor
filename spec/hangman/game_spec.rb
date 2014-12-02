@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Parlor::Hangman::Game do
+describe Parlor::Hangman do
 
-  let!(:game) { Parlor::Hangman::Game.new }
+  let!(:game) { Parlor::Hangman.new }
 
   it 'has a hidden word' do
     game.hidden_word = 'potato'
@@ -10,15 +10,15 @@ describe Parlor::Hangman::Game do
   end
 
   it 'fetches a new word from a dictionary' do
-    game.fetch_new_word
     expect(game.hidden_word).to_not be nil
   end
 
-  it 'can accept a guess, and return the number of occurances' do
+  it 'resets the guesses hash upon changing the hidden word' do
     game.hidden_word = 'potato'
-    expect(game.guess('a')).to be 1
-    expect(game.guess('o')).to be 2
-    expect(game.guess('y')).to be 0
+    game.guess('m')
+    expect(game.remaining_guesses).to be 9
+    game.fetch_new_word
+    expect(game.remaining_guesses).to be 10
   end
 
   it 'returns the current state of the word' do
